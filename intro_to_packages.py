@@ -36,7 +36,6 @@ for i in range(3):
 # ---------------------------------------------------
 
 import cmath
-help (cmath)
 print(cmath.sqrt(-1))
 
 # TODO: Print the square root of -1 using cmath
@@ -74,6 +73,7 @@ print (number * 2)
 # 3. Construct a complex number and print it
 # ---------------------------------------------------
 import random
+
 real_part=random.randint(-10,10)
 imag_part=random.randint(-10,10)
 complex_number=complex(real_part,imag_part)
@@ -92,6 +92,8 @@ print (complex_number)
 # 4. Repeat until correct
 # ---------------------------------------------------
 
+print("Welcome to the Complex Number Guesser Game!")
+print("I have chosen a complex number with real and imaginary parts between -5 and 5.")
 target_real = random.randint(-5, 5)
 target_imag = random.randint(-5, 5)
 target = complex(target_real, target_imag)
@@ -112,9 +114,6 @@ while True:
     else:
         print("Imaginary part correct")
 
-
-print("Welcome to the Complex Number Guesser Game!")
-print("I have chosen a complex number with real and imaginary parts between -5 and 5.")
 
 # TODO: Write a loop where the user keeps guessing until correct
 # Hints:

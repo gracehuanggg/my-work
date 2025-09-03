@@ -22,7 +22,12 @@ width3 = 9
 height3 = 2
 print(f"Rectangle 3 area: {width3 + height3}")
 
+def area_rect(width, height):
+    return width * height
+area_rect(10,20)
+
 # Problem: What if you realize you wrote the wrong formula?
+# We wrote "wdith + height" instead of "width * height".
 # You’d have to go fix it in EVERY place.
 
 # Task: Find the bug and make sure to fix it in every place.
@@ -53,7 +58,9 @@ print(f"Rectangle 2 area: {area_of_rectangle(3, 7)}")
 print(f"Rectangle 3 area: {area_of_rectangle(9, 2)}")
 
 # Challenge: Add a new function area_of_circle(radius) with proper docstring.
-
+import math
+def area_of_circle(radius: int) -> float:
+    return radius * radius * math.pi
 
 # Example function WITHOUT a return value
 def print_welcome_message(student_name: str) -> None:
@@ -95,7 +102,9 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    def area(self) -> int:
+    def area(self) -> int: 
+        return self.width * self.height
+
         """
         Compute the area of this rectangle.
 
@@ -104,7 +113,7 @@ class Rectangle:
         """
         return self.width * self.height
 
-    def describe(self) -> None:
+    def describe(self) -> None: 
         """
         Print a description of the rectangle.
 

@@ -22,6 +22,8 @@ This challenge combines several Python concepts you have been learning:
   - Energy drops to **0** → Player loses
 
 ---
+energy = 20
+turn = 0 
 
 ### Actions Per Turn
 1. **Move**

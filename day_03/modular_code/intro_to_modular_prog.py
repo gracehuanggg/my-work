@@ -23,7 +23,8 @@ height3 = 2
 print(f"Rectangle 3 area: {width3 + height3}")
 
 def area_rect(width, height):
-    return width * height
+    product = width * height
+    return product
 area_rect(10,20)
 
 # Problem: What if you realize you wrote the wrong formula?
@@ -60,7 +61,9 @@ print(f"Rectangle 3 area: {area_of_rectangle(9, 2)}")
 # Challenge: Add a new function area_of_circle(radius) with proper docstring.
 import math
 def area_of_circle(radius: int) -> float:
-    return radius * radius * math.pi
+    product = radius * radius * math.pi
+    return product
+print (f"Circle area: {area_of_circle(5)}")
 
 # Example function WITHOUT a return value
 def print_welcome_message(student_name: str) -> None:

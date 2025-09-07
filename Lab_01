@@ -1,0 +1,61 @@
+all_users=[]
+# define all_users list to store the user information
+
+again = ""
+while again.strip().lower() != "no":
+    name = input ("Hello! What is you name? ")
+    # ask the user to input name
+    print (f"Welcome, {name}, to the Python Program!")
+    # Welcome user to the program with user name
+
+    age = int(input("How old are you? "))
+    # ask the user to input age
+
+    if age < 13: 
+        print ("You are not able to sit in passenger seat of car, or rent a car, or vote, yet.")
+    elif age < 18:
+        print ("You are old enough to sit in passenger seat of a vehicle, but you cannot vote.")
+    elif age < 25:
+        print ("You can sit in passenger seat and vote, but you cannot rent a car.")
+    elif age > 35:
+        print ("You are getting old.")
+    # print statements if user is under 13, under 18, under 25, or over 35 print statements
+
+    menu = {'1': 'I only speak one language', '2': 'I speak more than one language'}
+    for key, value in menu.items():
+        print(f"{key}:{value}")
+    # define a menu for language choice
+    
+    choice=input(f"Enter your choice (1 or 2): ").strip()
+    language_list=[]
+    if choice == '1':
+        lan1=input("Please enter what language(s) you would like to learn: ")
+        print (lan1)
+    elif choice == '2':
+        lan_number=int(input("Please enter the number of language(s) you speak: "))
+        print (lan_number)
+        for lan in range (lan_number):
+            lan_temp=input(f"What is language {lan +1}? ")
+            language_list.append(lan_temp)
+        print(language_list)
+    else:
+        print("Please choose a valid option.")
+        break
+    # if the user is multilingual, ask the user what language(s) they speak
+    # if the user is not multilingual, ask the user what language they would like to learn
+    # print out the language choice
+
+    user_1 = {
+        "name":name,
+        "age": age, 
+        "multilingual": choice=="2"
+            }
+    # add user information to a dictonary user_1
+
+    all_users.append(user_1)
+
+    again = input ("Would you like to add another user? (yes/no) ")
+    if again.strip().lower() != "yes":
+        break
+
+print (all_users)

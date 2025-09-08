@@ -1,6 +1,14 @@
 {
-    "name": "Miga House,"
-    "location": ""
+    "name": "Miga House",
+    "location": "172 West 4th Street, New York, NY 10014",
+    "cusine": "Korean",
+    "menu": 
+    [
+        {"category": "Appetizer".
+    "id": 1, 
+    "items" }
+
+    ]
 
 }
 

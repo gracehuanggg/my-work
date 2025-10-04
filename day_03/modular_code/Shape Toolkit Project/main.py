@@ -1,10 +1,10 @@
 from shapes import Rectangle, circle, triangle
 from utils import cm2_to_m2, m2_to_cm2, larger_shape
 
-def welcome_message ()-> None:
-    print ("Welcome to the Shape Toolkit Project!")
+def welcome_message() -> None:
+    print("Welcome to the Shape Toolkit Project!")
     print("We support Rectangles, Circles, and Triangles.")
-    print("let's see some examples...")
+    print("Let's add some shapes...\n")
 
 def read_positive_number(prompt_text):
     while True:
@@ -29,12 +29,12 @@ def user_create_shape():
 
     elif shape_type == "circle":
         r = read_positive_number("Radius (cm): ")
-        return Circle(r)
+        return circle(r)          # use lowercase to match your import
 
     elif shape_type == "triangle":
         b = read_positive_number("Base (cm): ")
         h = read_positive_number("Height (cm): ")
-        return Triangle(b, h)
+        return triangle(b, h)     # use lowercase to match your import
 
     else:
         print("Please enter rectangle, circle, or triangle.")
@@ -43,8 +43,7 @@ def user_create_shape():
 def main():
     welcome_message()
 
-    shapes = []
-
+    # ask how many shapes to add
     while True:
         how_many_text = input("How many shapes would you like to add? ")
         try:
@@ -56,19 +55,22 @@ def main():
         except ValueError:
             print("Please enter a whole number like 1, 2, or 3.")
 
+    # user creates shapes
+    shapes = []
     for i in range(how_many):
-        print("Adding shape", i)
-        s = create_shape_from_user()
+        print("\nAdding shape", i + 1)
+        s = user_create_shape()   # call the function you actually defined
         if s is not None:
             shapes.append(s)
             print("Added!")
         else:
-            print("Shapes are not added.")
+            print("Skipped.")
 
     if len(shapes) == 0:
         print("\nNo shapes to show. Goodbye!")
         return
 
+    # print shapes and areas
     print("\nYour shapes and areas:")
     i = 0
     while i < len(shapes):
@@ -82,6 +84,8 @@ def main():
         print()
         i += 1
 
+if __name__ == "__main__":
+    main()
 
 
 

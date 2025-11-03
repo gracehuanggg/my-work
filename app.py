@@ -18,7 +18,8 @@ def contact():
 @app.route("/about")
 def about():
     author = "Grace Huang"
+    occupation = "student"
     interests = ["Web development", "Coding", "Web browsing"]
-    return render_template("about.html", author=author, interests=interests)
+    return render_template("about.html", author=author, occupation=occupation, interests=interests)
 
 app.run(debug=True)

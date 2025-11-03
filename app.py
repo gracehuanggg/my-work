@@ -19,7 +19,11 @@ def contact():
 def about():
     author = "Grace Huang"
     occupation = "student"
+    age = "17"
     interests = ["Web development", "Coding", "Web browsing"]
     return render_template("about.html", author=author, occupation=occupation, interests=interests)
 
 app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True)

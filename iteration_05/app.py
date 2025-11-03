@@ -21,7 +21,7 @@ def about():
     occupation = "student"
     age = "17"
     interests = ["Web development", "Coding", "Web browsing"]
-    return render_template("about.html", author=author, occupation=occupation, interests=interests)
+    return render_template("about.html", author=author, occupation=occupation, age=age, interests=interests)
 
 app.run(debug=True)
 

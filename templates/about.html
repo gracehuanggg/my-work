@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+  <h1>About Me</h1>
+
+  {% if author %}
+    <p>Hello! My name is {{ author }}.</p>
+  {% else %}
+    <p><em>Name not provided.</em></p>
+  {% endif %}
+
+  <p>This year, I learned some basic coding and am stating to learn how to build websites. 
+    I am super interested in experimenting with different web technologies to see what I can create!
+  </p>
+
+  <h3>Things I like about technology:</h3>
+  <ul>
+    {% for item in interests %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

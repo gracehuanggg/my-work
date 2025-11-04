@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+  <h1>Contact</h1>
+
+  <p>
+    My email is:
+    {% if email %}
+      {{ email }}
+    {% else %}
+      Email not available
+    {% endif %}
+  </p>
+
+  <p>
+    My phone number is:
+    {% if phone %}
+      {{ phone }}
+    {% else %}
+      Phone number not available
+    {% endif %}
+  </p>
+
+  {% if is_student %}
+    <p>I am a student learning Flask!</p>
+  {% else %}
+    <p>I enjoy working with people learning Flask.</p>
+  {% endif %}
+{% endblock %}

@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html>
-<!-- Head tag contains metadata. Things that we don't see in the program like CSS links, Javascript imports if needed-->
-<head>
-    <meta charset="utf-8">
-    <title>{% block title %}My Page{% endblock %}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+{% extends "base.html" %}
 
-<!-- Body tag opens the main visible part of the webpage. Everything shown in the browser window lives inside here.-->
-<body class="min-h-screen bg-pink-100 text-gray-900 flex flex-col">
-    
-    <nav class="flex justify-around items-center p-4 bg-pink-300 text white-shadowf"></body></nav>
-        <a href="/" class="hover:bg-pink-400 px-3 py-1 rounded">Home</a>
-        <a href="/about" class="hover:bg-pink-400 px-3 py-1 rounded">About</a>
-        <a href="/contact" class="hover:bg-pink-400 px-3 py-1 rounded">Contact</a>
-    <hr>
-</nav>
+{% block title %}About{% endblock %}
 
-  <main class="flex justify-center py-10">
-    <div class="bg-white p-6 rounded shadow w-full max-w-lg">
-      {% block content %}{% endblock %}
-    </div>
-  </main>
-</body>
-</html>
+{% block content %}
+<div class="flex justify-center items-start w-full-px-4mt-10">
+  <img
+    src="{{ url_for('static', filename='images/profile_picture.jpg') }}?v=1"
+    alt="Profile Photo"
+    class="w-32 h-32 rounded-full object-cover border-4 border-pink-200 shadow mx-auto mb-4"
+/>
+  <div class ="bg-white p-6 rounded shadow w-full max-w-lg">
+    <h1 class="text-2xl font-semibold text-pink-600 text-center mb-3">About Me</h1>
+  {% if author %}
+    <p class="mb-3">Hello! My name is <span class ="font-semibold">{{ author }}</span>.
+      I am a {{occupation}} and am {{age}} years old. </p>
+  {% else %}
+    <p class = "italic-text-gray-500 mb-3">Name not provided.</p>
+  {% endif %}
+
+  <p class="mb-4">This year, I learned some basic coding and am starting to learn how to build websites. 
+    I am super interested in experimenting with different web technologies to see what I can create!
+  </p>
+    <h2 class="font semibold mb-2 text-pink-600"></h2>Here are things I like about tech and CompSci:</h3>
+    <ul class="italic-text-gray-500 list-disc list-inside mb-4">
+      {% for item in interests %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

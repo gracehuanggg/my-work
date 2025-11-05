@@ -2,23 +2,25 @@
 <html>
 <!-- Head tag contains metadata. Things that we don't see in the program like CSS links, Javascript imports if needed-->
 <head>
-    <!-- Title tag determines what ends up in browser tab -->
-    <!-- Since we want different pages, to have different titles, we use a jinja2 block -->
-    <!-- This means that templates which extend this one can replace the content of the title block with their own title.-->
-    <title> {% block title %}Flask UI{% endblock %} </title>
+    <meta charset="utf-8">
+    <title>{% block title %}My Page{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <!-- Body tag opens the main visible part of the webpage. Everything shown in the browser window lives inside here.-->
-<body>
-    <!-- Navigation bar because I want all my pages to have the ability to navigate between other routes -->
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/contact">Contact</a> |
-        <a href="/about">About</a>
-    </nav>
-    <hr> <!-- This creates a horizontal line -->
+<body class="min-h-screen bg-pink-100 text-gray-900 flex flex-col">
+    
+    <nav class="flex justify-around items-center p-4 bg-pink-300 text white-shadowf"></body></nav>
+        <a href="/" class="hover:bg-pink-400 px-3 py-1 rounded">Home</a>
+        <a href="/about" class="hover:bg-pink-400 px-3 py-1 rounded">About</a>
+        <a href="/contact" class="hover:bg-pink-400 px-3 py-1 rounded">Contact</a>
+    <hr>
+</nav>
 
-    <!-- This is where child templates will insert content -->
-    {% block content %}{% endblock %}
+  <main class="flex justify-center py-10">
+    <div class="bg-white p-6 rounded shadow w-full max-w-lg">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
 </body>
 </html>

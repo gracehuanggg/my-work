@@ -3,29 +3,30 @@
 {% block title %}Contact{% endblock %}
 
 {% block content %}
-  <h1>Contact</h1>
+<div class="flex justify-center items-start w-full px-4 mt-10">
+  <div class="bg-white p-6 rounded shadow w-full max-w-lg">
+    <h1 class="text-2xl font-semibold text-pink-600 text-center mb-4">Contact</h1>
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div class="p-3 border border-pink-200 rounded hover:bg-pink-50">
+        <p class="font-semibold text-pink-600">Email:</p>
+        <a href="mailto:ghuang26@nmhschool.org"
+           class="text-blue-600 hover:underline">
+           {{ email }}
+        </a>
+      </div>
 
-  <p>
-    My email is:
-    {% if email %}
-      {{ email }}
-    {% else %}
-      Email not available
-    {% endif %}
-  </p>
+      <div class="p-3 border border-pink-200 rounded hover:bg-pink-50">
+        <p class="font-semibold text-pink-600">Phone:</p>
+        <a href="tel:857-500-3746"
+           class="text-blue-600 hover:underline">
+           {{ phone }}
+        </a>
+      </div>
+    </div>
+    <div class="text-center p-2 bg-pink-100 rounded text-sm">
+      I am a student learning Flask!
+    </div>
 
-  <p>
-    My phone number is:
-    {% if phone %}
-      {{ phone }}
-    {% else %}
-      Phone number not available
-    {% endif %}
-  </p>
-
-  {% if is_student %}
-    <p>I am a student learning Flask!</p>
-  {% else %}
-    <p>I enjoy working with people learning Flask.</p>
-  {% endif %}
+  </div>
+</div>
 {% endblock %}

@@ -1,6 +1,8 @@
 # Materials
 
 All materials for students to pull each day when they arrive in class. ReadMe page includes tips for python syntax and packages, basic git commands for initialization and daily workflow, links to best practices.
+****
+
 
 ---
 

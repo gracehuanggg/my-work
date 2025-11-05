@@ -1,25 +1,26 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<!-- Head tag contains metadata. Things that we don't see in the program like CSS links, Javascript imports if needed-->
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}My Page{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-{% block title %}About{% endblock %}
+<!-- Body tag opens the main visible part of the webpage. Everything shown in the browser window lives inside here.-->
+<body class="min-h-screen bg-pink-100 text-gray-900 flex flex-col">
+    
+    <nav class="flex justify-around items-center p-4 bg-pink-300 text white-shadowf"></body></nav>
+        <a href="/" class="hover:bg-pink-400 px-3 py-1 rounded">Home</a>
+        <a href="/about" class="hover:bg-pink-400 px-3 py-1 rounded">About</a>
+        <a href="/contact" class="hover:bg-pink-400 px-3 py-1 rounded">Contact</a>
+    <hr>
+</nav>
 
-{% block content %}
-  <h1>About Me</h1>
-
-  {% if author %}
-    <p>Hello! My name is {{ author }}. I am a {{occupation}} and am {{age}} years old. </p>
-  {% else %}
-    <p><em>Name not provided.</em></p>
-  {% endif %}
-
-  <p>This year, I learned some basic coding and am starting to learn how to build websites. 
-    I am super interested in experimenting with different web technologies to see what I can create!
-  </p>
-
-  <h3>Here are things I like about technology and learning CompSci:</h3>
-  <ul>
-    {% for item in interests %}
-      <li>{{ item }}</li>
-    {% endfor %}
-  </ul>
-
-{% endblock %}
+  <main class="flex justify-center py-10">
+    <div class="bg-white p-6 rounded shadow w-full max-w-lg">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+</body>
+</html>
